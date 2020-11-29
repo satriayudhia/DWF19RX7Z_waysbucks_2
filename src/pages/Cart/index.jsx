@@ -20,12 +20,22 @@ const Cart = () => {
 
     const [payStatus, setPayStatus] = useState(false)
     const [dataTransaction, setDataTransaction] = useState([])
+    const [total, setTotal] = useState(0)
+    const [qty, setQty] = useState(0)
+
+    const sumTotal = () => {
+        let priceList = dataTransaction.map((prices) => prices.price)
+        let sum = priceList.reduce((a,b) => a + b, 0)
+        setTotal(sum)
+        setQty(priceList.length)
+    }
 
     useEffect(() => {
         axios.get(`http://localhost:3000/transactions?idUser=${state.idUser}`)
             .then(function (response) {
                 // handle success
                 setDataTransaction(response.data)
+                sumTotal()
                 console.log('data transaksi', dataTransaction)
             })
             .catch(function (error) {
@@ -59,16 +69,16 @@ const Cart = () => {
                             <Row className="garis-subtotal"/>
                             <Row className="subtotal-price">
                                 <Col>Subtotal</Col>
-                                <Col className="align-right">69.000</Col>
+                                <Col className="align-right">{total}</Col>
                             </Row>
                             <Row className="subtotal-price">
                                 <Col>Qty</Col>
-                                <Col className="align-right">2</Col>
+                                <Col className="align-right">{qty}</Col>
                             </Row>
                             <Row className="garis-subtotal"/>
                             <Row className="total-price">
                                 <Col>Total</Col>
-                                <Col className="align-right">69.000</Col>
+                                <Col className="align-right">{total}</Col>
                             </Row>
                         </Col>
                         <Col className="attachment"><img src={Attachment} alt="attachment" /></Col>
