@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 
 const ProductCart = (props) => {
     //Context
-    const [state] = useContext(AppContext);
+    const [state, dispatch] = useContext(AppContext);
     const [idTransaction, setIdTransaction] = useState('')
 
     const router = useHistory()
@@ -36,6 +36,9 @@ const ProductCart = (props) => {
         })
         .catch(function (error) {
             console.log(error);
+        })
+        dispatch({
+            type: "DELETE_CART"
         })
     }
 

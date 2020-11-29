@@ -69,7 +69,10 @@ const Detail = (props) => {
                 topings: [],
                 price: product.price
             }
-          })
+        })
+        dispatch({
+            type: "ADD_CART"
+        })
         router.push("/cart")
     }
 

@@ -5,7 +5,7 @@ export const AppContext = createContext()
 const initialState = {
     isLogin: false,
     idUser: [],
-    carts: []
+    carts: 0
 }
 
 const reducer = (state, action) => {
@@ -25,6 +25,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 carts: state.carts + 1
+        }
+        case "DELETE_CART":
+            return {
+                ...state,
+                carts: state.carts - 1
         }
         default: throw new Error()
     }

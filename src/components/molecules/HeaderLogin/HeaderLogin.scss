@@ -7,19 +7,37 @@
 }
 
 .profile-header {
-    padding-right: 20%;
+    padding-left: 80px;
     align-self: center;
     text-align: end;
     margin-top: 80px;
+    position: relative;
+    display: flex;
+    .cart-header {
+        cursor: pointer;
+        position: relative;
+        top: 10px;
+        margin-right: 26px;
+    }
+    .notif {
+        position: absolute;
+        color: #FFF;
+        background-color: red;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        top: 16%;
+        padding-right: 6px;
+        left: 16%;
+    }
+    .avatar-header {
+        margin-left: 0px;
+        cursor: pointer;
+    }
 }
 
-.avatar-header {
-    margin-left: 36px;
-    cursor: pointer;
-}
 
-.cart-header {
-    cursor: pointer;
-}
+
+
 
 

@@ -43,6 +43,9 @@ const HeaderLogin = () => {
                 </Col>
                 <Col sm={4} className="profile-header">
                     <Cart className="cart-header" onClick={toCart}/>
+                    {
+                        state.carts == 0 ? (<p></p>) : (<p className="notif">{state.carts}</p>)
+                    }
                     <OverlayTrigger
                         trigger="click"
                         key='bottom'
