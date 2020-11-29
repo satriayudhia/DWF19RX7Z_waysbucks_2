@@ -5,6 +5,7 @@
       "name": "Satria Yudhia Putra",
       "email": "satria.yudhiap@gmail.com",
       "password": "12345678",
+      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606658898/satriayud/yw5woxcsxmmsjitvd33a.jpg",
       "isAdmin": false
     },
     {
@@ -12,6 +13,7 @@
       "name": "Dork",
       "email": "yudha@gmail.com",
       "password": "12345",
+      "profpic": "",
       "isAdmin": false
     },
     {
@@ -19,6 +21,7 @@
       "name": "administrator",
       "email": "admin@admin.com",
       "password": "12345678",
+      "profpic": "",
       "isAdmin": true
     }
   ],

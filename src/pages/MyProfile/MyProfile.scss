@@ -24,10 +24,14 @@
 .content-profile {
     margin-left: 20%;
     margin-right: 24%;
+    .file-input-img {
+        display: none;
+    }
     .profpic {
         width: 180px;
         height: 221.79px;
         object-fit: cover;
+        cursor: pointer;
     }
     .profile-detail {
         margin-left: 60px;
