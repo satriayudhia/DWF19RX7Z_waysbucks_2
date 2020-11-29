@@ -1,6 +1,7 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {AppContext} from '../../../config/Context'
 import {useHistory} from 'react-router-dom'
+import axios from 'axios'
 import './HeaderLogin.scss'
 import {ReactComponent as Logo} from '../../../assets/logos/Logo.svg'
 import {ReactComponent as Avatar} from '../../../assets/avatar/avatar.svg'
@@ -15,9 +16,26 @@ import {ReactComponent as LogoutBtn} from '../../../assets/logos/logoutBtn.svg'
 
 const HeaderLogin = () => {
     //Context
-    const [state, dispatch] = useContext(AppContext);
+    const [state, dispatch] = useContext(AppContext)
+
+    const [user, setUser] = useState([])
+    const [image, setImage] = useState('')
 
     const router = useHistory();
+
+    useEffect(() => {
+        axios.get(`http://localhost:3000/users/${state.idUser}`)
+            .then(function (response) {
+                // handle success
+                setUser(response.data)
+                setImage(response.data.profpic)
+                console.log("res", response.data)
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    }, [])
 
     const toHome = () => {
         router.push("/home")
@@ -61,7 +79,8 @@ const HeaderLogin = () => {
                             </Popover>
                         }
                         >
-                        <Avatar className="avatar-header" />
+                        <img src={image} className="avatar-header"/>
+                        {/* <Avatar className="avatar-header" /> */}
                     </OverlayTrigger>
                 </Col>
             </Row>

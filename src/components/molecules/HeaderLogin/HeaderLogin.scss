@@ -33,6 +33,12 @@
     .avatar-header {
         margin-left: 0px;
         cursor: pointer;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #BD0707;
+box-sizing: border-box;
     }
 }
 
