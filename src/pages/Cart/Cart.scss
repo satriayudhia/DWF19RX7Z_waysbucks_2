@@ -1,0 +1,114 @@
+.top-cart-mycart {
+    margin-top: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 33px;
+    color: #BD0707;
+    padding-top: 10px;
+    margin-bottom: -10px;
+}
+
+.top-cart-review {
+    margin-left: 20%;
+    margin-right: 47%;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #BD0707;
+    padding-top: 10px;
+    height: 40px;
+    margin-bottom: -10px;
+    border-bottom: 2px solid #BD0707;
+
+}
+
+.left-cart-detail {
+    margin-left: 20%;
+    .garis {
+        border-top: 2px solid #BD0707;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    .garis-subtotal {
+        border-top: 2px solid #BD0707;
+    }
+    .subtotal-price {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: #BD0707;
+        padding: 10px;
+        .align-right {
+            text-align: end;
+        }
+    }
+    .total-price {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        color: #BD0707;
+        padding: 10px;
+        .align-right {
+            text-align: end;
+        }
+    }
+    .attachment {
+        text-align: end;
+        margin-top: -15px;
+        cursor: pointer;
+    }
+}
+
+.payment-column {
+    margin-left: 30px;
+    .btn-payment {
+        width: 420px;
+        height: 50px;
+        background: #BD0707;
+        border-radius: 5px;
+        border: 2px solid #BD0707;
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 25px;
+        color: #FFFFFF;
+        cursor: pointer;
+        &:hover {
+            background: #FFF;
+            border: 2px solid #BD0707;
+            color: #BD0707;
+        }
+    }
+
+}
+
+.order-status {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 39px;
+    margin-bottom: 39px;
+
+    color: #469F74;
+}
+
+
+
+
+

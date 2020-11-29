@@ -1,0 +1,104 @@
+.image-product-wrapper {
+    margin-top: 52px;
+    text-align: end;
+    position: relative;
+
+    .img-product-detail {
+        position: relative;
+        object-fit: cover;
+        width: 436px;
+        height: 555px;
+        border-radius: 10px;
+        z-index: 1;
+        margin-right: -100px;
+    }
+    
+    .logo-product-detail {
+        position: relative;
+        top: 18%;
+        left: -22%;
+        width: 100px;
+        height: 101px;
+        z-index: 3;
+    }
+}
+
+.detail-product-wrapper {
+    margin-top: 52px;
+    padding-left: 40px;
+
+    .product-title-detail {
+            font-family: Avenir;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 66px;
+            color: #BD0707;
+    }
+
+    .product-price-detail {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 33px;
+        color: #974A4A;
+    }
+
+    .product-toping-detail {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 33px;
+        color: #974A4A;
+    }
+
+    .product-toping-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 40%;
+    }
+
+    .total-product {
+        margin-top: 3%;
+        margin-right: 13%;
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 33px;
+        color: #974A4A;
+        &:p {
+            text-align: right;
+        }
+    }
+
+    .btn-add-cart {
+        width: 620px;
+        height: 40px;
+        background: #BD0707;
+        border-radius: 5px;
+        border: 2px solid #BD0707;
+
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        
+        align-items: center;
+        text-align: center;
+        
+        color: #FFFFFF;
+        
+
+        &:hover {
+            background: #FFF;
+            border: 2px solid #BD0707;
+            color: #BD0707;
+        }
+    }
+}
+
+

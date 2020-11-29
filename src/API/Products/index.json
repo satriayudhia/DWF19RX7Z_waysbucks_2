@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1, "name": "Ice Coffe Palm Sugar", "price": 27000, "img": "https://s3-alpha-sig.figma.com/img/82f2/db53/fac76fcc5fc42321f68aa860e9145f4f?Expires=1607299200&Signature=cviytiuLkgWgVRMH-VSLs8PHyeIb~tn0EXkd8CG4rCL2eb~TwzsgjFet8h6jp3C1HQ5OY2Dz3ewbo75IuWo5plZ3zWfrerS~1ilVVxXmCLm49gPQrCEDJF8txk2Ml6BZmdRsaooeEI4KtnZpGQklfTgjDFYA5fYMxz3oSYgz7JJ7nKP9WSk9YBd1TjfZx2ahzbfwICHyqC6GSLDP9UpG5Gve9mybn~G3D~~BuddpSHRhvhvd~bWXP1kewDM1zO-Q9LQTqzjgDew7AgkhCzLvXopl2QMg1RfDtzrhmL33ov2tC574oVARbeMOhjSsOKrqemB-yIdVc5A8lDbqEPjGKw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+        "id": 2, "name": "Ice Coffe Green Tea", "price": 31000, "img": "https://s3-alpha-sig.figma.com/img/0ce6/84bc/0f4e2f95bbf53e057c8051e5829ad356?Expires=1607299200&Signature=cncRxmgFNZ9L9UIPJ~6TTgtg55AYxM~EESzZGn89g8F36DBQz5~P9o5JIbZr6OHwu3vGvTKx1KAkXybsnO2rUZUofnmsowf9mHo5X48uOa1WxxJ3IaQ1uxWWVdc9h0CuQce-TH0ml2wziiuPsdUmjeTBRvEIdXie4HX1VFZCfg6KUSC8pN1Ji5K-N4lahzCkWZU8J7wf0YjX244LpPm4yPJCk9h6oI2ndVKtoqMC8DHbrvWgH6~0db6WpwkUlYGVASfdkL1nm-jTUtz3caCRaZXsJovYo2Ec4Fok3yB1znuqsG7Gs4BZOacUpmgTqSElHTK-jp7iznI1zjmvSUd7Bw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+        "id": 3, "name": "Hanami Latte", "price": 29000, "img": "https://s3-alpha-sig.figma.com/img/0655/9843/7bb2fcf50294d6e214bde156ddc7046d?Expires=1607299200&Signature=F6FbUM1W~HSi7kC-ABXgyVMcMREI5v1PNAv5gl1orWbXiDeduq3E89ZGiawOLUIsP5o8TMRIUAQZiOG4rsR5fyDEI3kXhVakMYnrsk-pT--khI1IWXRS446oI-JSJVZ8CNDutmjKpYXampTOIROeuc~-iFeasqKeapMANDLZ93s-~u7M02As~RhF-aUTUh1o325QrGIH-0yW9YxyKsudNJ8FRQgm-4Kj1gSbYHz5ULVsHVpBLigkRsSRcgEso0ZjPHRL0NQOw4rNe9IN0f~KzrfeH0tWfJVR0fJ4TxH~po40~dCLk~wK4Bxfv58jDtkENwWWudja4eiSYYoQjztKZg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+        "id": 4, "name": "Clepon Coffe", "price": 28000, "img": "https://s3-alpha-sig.figma.com/img/455f/d2e8/c6f3c8f48b267cbb65c369485f9a27ad?Expires=1607299200&Signature=deiPeQJ2gUwLJfKbQMbHr2Z~4U3d0J0qINUKZ0j7lhmXLWbaogNfknlX51sb6s079VinDFckK6ZuLH0Abjq6xB-a6AQ19eCkisF9URuCa0sllgSb2b2rzT6YaNlguLY6JIo0HTxfHdcM9txNe6TVjMV9k8F8lQsF-Aw3KP71gStHQWV0qOWz-cidZLEwILJztMcY6EmdRHzBrs3FzSL5T~aHm2j~HUMUm1zGVmf31NYqNvbPiZ1IhAm~9-V66239CmpmKkWHdWNv5di7yoc3XP45czm-lZ33soCc2KB8OfLKcjgvywCvfHHGGBl0lXZ~1YDd9LTR-GDcKmoc-alVYw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    }
+]

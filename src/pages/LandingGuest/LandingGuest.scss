@@ -1,0 +1,139 @@
+.logo-header-guest{
+    margin-top: 80px;
+    padding-left: 20%;
+}
+
+.button-header-guest {
+    padding-right: 20%;
+    align-self: center;
+    text-align: end;
+    margin-top: 80px;
+}
+
+.modal-login {
+    left: 0%;
+    padding-left: 80px;
+    margin: auto;
+    width: 30%;
+}
+
+.modal-register {
+    left: 0%;
+    padding-left: 80px;
+    margin: auto;
+    width: 30%;
+}
+
+.content-guest {
+    justify-content: center;
+}
+
+.login-wrapper {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 45px;
+    margin-left: 8px;
+    
+    background: #FFFFFF;
+    border-radius: 10px;
+
+    .title-login {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 49px;
+
+        color: #BD0707;
+
+        margin-bottom: 29px;
+    }
+
+    .to-register {
+        padding-top: 20px;
+        margin: auto;
+        width: 90%;
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+
+        color: #000000;
+    }
+    .form-input {
+        width: 350px;
+        height: 50px;
+        background: rgba(224, 200, 200, 0.25);
+        border: 2px solid #BD0707;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding-left: 10px;
+    
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+    
+        color: rgba(104, 50, 50, 0.5);
+    }
+}
+
+.register-wrapper {
+    width: 416px;
+    height: 391px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-left: 12%;
+    margin-bottom: 30px;
+    margin-right: 200px;
+
+    .title-register {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 49px;
+
+        color: #BD0707;
+
+        margin-bottom: 29px;
+    }
+
+    .to-login {
+        padding-top: 20px;
+        margin: auto;
+        width: 95%;
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+
+        color: #000000;
+    }
+    .form-input {
+        width: 350px;
+        height: 50px;
+        background: rgba(224, 200, 200, 0.25);
+        border: 2px solid #BD0707;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding-left: 10px;
+    
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+    
+        color: rgba(104, 50, 50, 0.5);
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+

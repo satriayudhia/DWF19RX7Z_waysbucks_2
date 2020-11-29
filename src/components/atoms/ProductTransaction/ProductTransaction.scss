@@ -1,0 +1,73 @@
+.img-trans-wrapper {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 0px;
+    .product-trans {
+        position: relative;
+        border-radius: 10px;
+        width: 80px;
+        height: 97px;
+        object-fit: cover;
+        z-index: 1;
+    }
+    
+    .logo-trans {
+        position: absolute;
+        top: 63%;
+        left: 40%;
+        z-index: 2;
+        width: 19px;
+        height: 19px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+}
+
+.detail-trans {
+    padding-left: 30px;
+    padding-top: 7%;
+    .title-trans{
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        color: #BD0707;
+    }
+    
+    .date-trans {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+        color: #BD0707;
+    }
+    
+    .brown-txt {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 10px;
+        line-height: 14px;
+        align-items: center;
+        color: #974A4A;
+        display: flex;
+    }
+    
+    .red-txt {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 14px;
+        align-items: center;
+        color: #BD0707;
+        display: flex;
+    }
+}
+

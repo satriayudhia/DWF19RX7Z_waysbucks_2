@@ -1,0 +1,36 @@
+.jumbotron {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 61%;
+    background-color: white;
+}
+
+.let-order {
+    width: 57%;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 49px;
+
+    color: #BD0707;
+}
+
+.product-list {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    left: 22%;
+    margin-right: 10%;
+}
+
+
+
+
+
