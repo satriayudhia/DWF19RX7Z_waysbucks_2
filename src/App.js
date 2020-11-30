@@ -9,6 +9,7 @@ import MyProfile from './pages/MyProfile'
 import AddProduct from './pages/AddProduct'
 import AddToping from './pages/AddToping'
 import Admin from './pages/Admin'
+import NotFound from './config/NotFound'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <PrivateRoute exact path="/add-product" component={AddProduct} />
           <PrivateRoute exact path="/add-toping" component={AddToping} />
           <PrivateRoute exact path="/admin" component={Admin} />
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </Context>

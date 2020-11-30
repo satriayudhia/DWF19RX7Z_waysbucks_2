@@ -5,7 +5,7 @@
       "name": "Satria Yudhia Putra",
       "email": "satria.yudhiap@gmail.com",
       "password": "12345678",
-      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606658898/satriayud/yw5woxcsxmmsjitvd33a.jpg",
+      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606714001/satriayud/qqj70pde0cglhyqg69ru.jpg",
       "isAdmin": false
     },
     {
@@ -13,7 +13,7 @@
       "name": "Dork",
       "email": "yudha@gmail.com",
       "password": "12345",
-      "profpic": "",
+      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606646227/satriayud/197-1979569_no-profile_yn9cy0.png",
       "isAdmin": false
     },
     {
@@ -21,8 +21,24 @@
       "name": "administrator",
       "email": "admin@admin.com",
       "password": "12345678",
-      "profpic": "",
+      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606646227/satriayud/197-1979569_no-profile_yn9cy0.png",
       "isAdmin": true
+    },
+    {
+      "id": 1606700049034,
+      "name": "new",
+      "email": "new",
+      "password": "new",
+      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606646227/satriayud/197-1979569_no-profile_yn9cy0.png",
+      "isAdmin": false
+    },
+    {
+      "id": 1606718063230,
+      "name": "imam darto",
+      "email": "imam@gmail.com",
+      "password": "12345",
+      "profpic": "https://res.cloudinary.com/satria-img/image/upload/v1606718215/satriayud/mfleuksoi6wljf3lxyqo.jpg",
+      "isAdmin": false
     }
   ],
   "topings": [
@@ -73,6 +89,12 @@
       "name": "Strawberry Popping",
       "price": "4000",
       "img": "https://s3-alpha-sig.figma.com/img/634e/132d/e8be8b6efdbc9321c21519b5892b16b7?Expires=1607299200&Signature=I2~cQjh18D9pL5CdYQqDuzkQn9x2E4y6Nt4UHwU0QW7r2rYAzBdRiZAo2q8tt6bnorxJVVA7WoE3RVga4K6vCUDkfQ98kG-FzzB1s5~MqPndvpKf3jZCtHaLSYgV5dCxRaHUZRriPbBtvwaKmTsg0bomD4ifgon7kn3L1PxsYwFVrgunhItkOBGyTCqHGvT-KNJHAbNn19qYzzS~jJI4sPIJsPhAIVCew~ANybbxWS4ARRcRVSoPijD-NBkGymHqq459UrfWhyzfFRDJkWNOPU56GyN4YYn948nLjtc0ayHv06PgMH2NelbohhCKkJ36T0t1YoBoCs6QCGILnscIdw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "id": "TOP1606718333941",
+      "name": "Bulir Hijau",
+      "price": "5000",
+      "img": "https://res.cloudinary.com/satria-img/image/upload/v1606718328/satriayud/nhuueqhwzumcsqlfhjdx.png"
     }
   ],
   "products": [
@@ -123,6 +145,12 @@
       "name": "Hanami Latte",
       "price": 29000,
       "img": "https://s3-alpha-sig.figma.com/img/0655/9843/7bb2fcf50294d6e214bde156ddc7046d?Expires=1607299200&Signature=F6FbUM1W~HSi7kC-ABXgyVMcMREI5v1PNAv5gl1orWbXiDeduq3E89ZGiawOLUIsP5o8TMRIUAQZiOG4rsR5fyDEI3kXhVakMYnrsk-pT--khI1IWXRS446oI-JSJVZ8CNDutmjKpYXampTOIROeuc~-iFeasqKeapMANDLZ93s-~u7M02As~RhF-aUTUh1o325QrGIH-0yW9YxyKsudNJ8FRQgm-4Kj1gSbYHz5ULVsHVpBLigkRsSRcgEso0ZjPHRL0NQOw4rNe9IN0f~KzrfeH0tWfJVR0fJ4TxH~po40~dCLk~wK4Bxfv58jDtkENwWWudja4eiSYYoQjztKZg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+    },
+    {
+      "id": "PROD1606718286933",
+      "name": "Ice Coffe",
+      "price": "30000",
+      "img": "https://res.cloudinary.com/satria-img/image/upload/v1606718282/satriayud/qqalbm4ba9ivjrqsnw8y.jpg"
     }
   ],
   "incomes": [
@@ -165,13 +193,13 @@
   ],
   "transactions": [
     {
-      "id": 1606657080595,
-      "idUser": 1,
-      "idProduct": 2,
-      "nameProduct": "Ice Coffe Green Tea",
-      "imgProduct": "https://s3-alpha-sig.figma.com/img/0ce6/84bc/0f4e2f95bbf53e057c8051e5829ad356?Expires=1607299200&Signature=cncRxmgFNZ9L9UIPJ~6TTgtg55AYxM~EESzZGn89g8F36DBQz5~P9o5JIbZr6OHwu3vGvTKx1KAkXybsnO2rUZUofnmsowf9mHo5X48uOa1WxxJ3IaQ1uxWWVdc9h0CuQce-TH0ml2wziiuPsdUmjeTBRvEIdXie4HX1VFZCfg6KUSC8pN1Ji5K-N4lahzCkWZU8J7wf0YjX244LpPm4yPJCk9h6oI2ndVKtoqMC8DHbrvWgH6~0db6WpwkUlYGVASfdkL1nm-jTUtz3caCRaZXsJovYo2Ec4Fok3yB1znuqsG7Gs4BZOacUpmgTqSElHTK-jp7iznI1zjmvSUd7Bw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
+      "id": 1606718793261,
+      "idUser": 1606718063230,
+      "idProduct": 1,
+      "nameProduct": "Ice Coffe Palm Sugar",
+      "imgProduct": "https://s3-alpha-sig.figma.com/img/82f2/db53/fac76fcc5fc42321f68aa860e9145f4f?Expires=1607299200&Signature=cviytiuLkgWgVRMH-VSLs8PHyeIb~tn0EXkd8CG4rCL2eb~TwzsgjFet8h6jp3C1HQ5OY2Dz3ewbo75IuWo5plZ3zWfrerS~1ilVVxXmCLm49gPQrCEDJF8txk2Ml6BZmdRsaooeEI4KtnZpGQklfTgjDFYA5fYMxz3oSYgz7JJ7nKP9WSk9YBd1TjfZx2ahzbfwICHyqC6GSLDP9UpG5Gve9mybn~G3D~~BuddpSHRhvhvd~bWXP1kewDM1zO-Q9LQTqzjgDew7AgkhCzLvXopl2QMg1RfDtzrhmL33ov2tC574oVARbeMOhjSsOKrqemB-yIdVc5A8lDbqEPjGKw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
       "topings": [],
-      "price": 31000
+      "price": 27000
     }
   ]
 }

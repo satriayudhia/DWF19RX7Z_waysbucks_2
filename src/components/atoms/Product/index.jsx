@@ -8,7 +8,7 @@ import {LogoProduct} from '../../../assets'
 
 const Product = (props) => {
     //Context
-    const [state, dispatch] = useContext(AppContext);
+    const [state] = useContext(AppContext);
     console.log("status login", state.isLogin)
     //Modal
     const [loginStatus, setLoginStatus] = useState(false)

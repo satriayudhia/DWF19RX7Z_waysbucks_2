@@ -7,11 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import HeaderAdmin from '../../components/molecules/HeaderAdmin'
-import InputTextProduct from '../../components/atoms/InputTextProduct'
-import InputNumberProduct from '../../components/atoms/InputNumberProduct'
-import InputFile from '../../components/atoms/InputFile'
 import Button from '../../components/atoms/Button'
-import Logo from '../../assets/logos/logoProduct.png'
 import Clip from '../../assets/logos/clip.png'
 
 const AddProduct = () => {

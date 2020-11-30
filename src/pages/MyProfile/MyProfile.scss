@@ -32,9 +32,12 @@
         height: 221.79px;
         object-fit: cover;
         cursor: pointer;
+        border: 2px solid #BD0707;
+        box-sizing: border-box;
+        border-radius: 10px;
     }
     .profile-detail {
-        margin-left: 60px;
+        margin-left: 40px;
         .brown-text {
             font-family: Avenir;
             font-style: normal;

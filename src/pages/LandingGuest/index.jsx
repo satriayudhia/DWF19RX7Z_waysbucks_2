@@ -57,10 +57,7 @@ const LandingGuest = () => {
                 // handle error
                 console.log(error);
         })
-
         // const findUser = User.find((email) => email.email === emailLogin)
-
-
     }
 
     const handleSubmitRegister = e => {
@@ -72,9 +69,10 @@ const LandingGuest = () => {
                 name: fullnameRegister,
                 email: emailRegister,
                 password: passwordRegister,
+                profpic: 'https://res.cloudinary.com/satria-img/image/upload/v1606646227/satriayud/197-1979569_no-profile_yn9cy0.png',
                 isAdmin: false
-            }, (err) => {
-                console.log('error', err)
+        }, (err) => {
+            console.log('error', err)
             }   
         )
         .then(

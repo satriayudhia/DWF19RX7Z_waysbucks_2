@@ -20,11 +20,13 @@ const Detail = (props) => {
     // const {id} = props.match.params.id
     const [topings, setTopings] = useState([])
     const [product, setProduct] = useState({})
+    const [topingPrice, setTopingPrice] = useState([])
+    const [total, setTotal] = useState(0)
 
     //UserId
     const [user, setUser] = useState("")
 
-    const [total, setTotal] = useState("")
+    // const [total, setTotal] = useState("")
 
     useEffect(() => {
         fetch('http://localhost:3000/topings')
@@ -43,16 +45,36 @@ const Detail = (props) => {
             setProduct(json)
         })
         .then(
-            setTotal(product.price),
-            console.log("total", total)
+            // setTotal(product.price)
+            // console.log("total", total)
         )
     }, [])
 
+    useEffect(() => {
+            let priceList = topingPrice.map((prices) => parseInt(prices.price))
+            let sum = priceList.reduce((a,b) => a + b, 0)
+            let sumTotal = product.price + sum
+            setTotal(sumTotal)
+            // console.log("pricelist", priceList)
+            // console.log("total", sum)
+    }, [topingPrice])
+
     const router = useHistory()
 
-    const sumTotal = (top) => {
-        const topNumber = parseInt(top)
-        setTotal(product.price + topNumber)
+    const handleTotal = (price, id, name) => {
+        let x = document.getElementById(name).checked
+        console.log("x", x)
+        if(x) {
+            const changeData = topingPrice.concat({id: id, price: price})
+            return setTopingPrice(changeData)
+        } else {
+            let newArray = topingPrice.filter( (item) => {
+                if(item.id !== id){
+                     return item;
+                }
+           });
+            setTopingPrice(newArray)
+        }
     }
 
     const toCart = () => {
@@ -97,16 +119,17 @@ const Detail = (props) => {
                     </Row>
                     <Row className="product-toping-list">
                         {
-                            topings.map((toping) => (
+                            topings.map((toping, index) => (
                                 <div className="toping-wrapper">
                                     <div className="round">
                                          <label for={toping.name}>
                                             <img className="img-toping" src={toping.img} alt="toping" />
                                         </label>
-                                        <input type="checkbox" id={toping.name} />
+                                        <input onChange={() => handleTotal(toping.price, toping.id, toping.name)} value={toping.price} type="checkbox" id={toping.name} />
                                         <label className="label-checkbox" for={toping.name}></label>
                                     </div>
                                     <div className="title-toping-wrapper">
+                                        <p className="title-toping">{toping.price}</p>
                                         <p className="title-toping">{toping.name}</p>
                                     </div>
                                 </div>
@@ -115,14 +138,14 @@ const Detail = (props) => {
                     </Row>
                     <Row className="total-product">
                         <Col><p>Total</p></Col>
-                        <Col><p>{product.price}</p></Col>
+                        <Col><p>{!total ? product.price : total}</p></Col>
                     </Row>
                     <Row>
                         <Button onClick={() => toCart(product.id)} className="btn-add-cart" title="Add Cart" />
                     </Row>
                 </Col>
             </Row>
-            <pre>{JSON.stringify(state, null, 2)}</pre>
+            <pre>{JSON.stringify(topingPrice, null, 2)}</pre>
         </Container>
     )
 }
