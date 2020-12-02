@@ -3,30 +3,23 @@ import {AppContext} from '../../config/Context'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import NumberFormat from 'react-number-format'
-import xtype from 'xtypejs'
 import './Detail.scss'
 import HeaderLogin from '../../components/molecules/HeaderLogin'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import LogoProduct from '../../assets/logos/logoProduct.png'
-import Toping from '../../components/atoms/Toping'
 import Button from '../../components/atoms/Button'
 
 const Detail = (props) => {
     //Context
     const [state, dispatch] = useContext(AppContext);
     
-    // const {id} = props.match.params.id
+    //Initial State
     const [topings, setTopings] = useState([])
     const [product, setProduct] = useState({})
     const [topingPrice, setTopingPrice] = useState([])
     const [total, setTotal] = useState(0)
-
-    //UserId
-    const [user, setUser] = useState("")
-
-    // const [total, setTotal] = useState("")
 
     useEffect(() => {
         fetch('http://localhost:3000/topings')
@@ -44,10 +37,6 @@ const Detail = (props) => {
         .then(json => {
             setProduct(json)
         })
-        .then(
-            // setTotal(product.price)
-            // console.log("total", total)
-        )
     }, [])
 
     useEffect(() => {
@@ -55,8 +44,6 @@ const Detail = (props) => {
             let sum = priceList.reduce((a,b) => a + b, 0)
             let sumTotal = product.price + sum
             setTotal(sumTotal)
-            // console.log("pricelist", priceList)
-            // console.log("total", sum)
     }, [topingPrice])
 
     const router = useHistory()
@@ -119,11 +106,11 @@ const Detail = (props) => {
                     </Row>
                     <Row className="product-toping-list">
                         {
-                            topings.map((toping, index) => (
+                            topings.map((toping) => (
                                 <div className="toping-wrapper">
                                     <div className="round">
                                          <label for={toping.name}>
-                                            <img className="img-toping" src={toping.img} alt="toping" />
+                                            <img className="img-toping1" src={toping.img} alt="toping" />
                                         </label>
                                         <input onChange={() => handleTotal(toping.price, toping.id, toping.name)} value={toping.price} type="checkbox" id={toping.name} />
                                         <label className="label-checkbox" for={toping.name}></label>
@@ -138,7 +125,9 @@ const Detail = (props) => {
                     </Row>
                     <Row className="total-product">
                         <Col><p>Total</p></Col>
-                        <Col><p>{!total ? product.price : total}</p></Col>
+                        <Col>
+                            <NumberFormat value={!total ? product.price : total} displayType={'text'} thousandSeparator={true} prefix={'Rp, '} renderText={value => <p className="product-price">{value}</p>} />
+                        </Col>
                     </Row>
                     <Row>
                         <Button onClick={() => toCart(product.id)} className="btn-add-cart" title="Add Cart" />
