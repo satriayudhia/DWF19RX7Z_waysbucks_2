@@ -17,6 +17,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingGuest} />
+          <Route exact path="/register" component={LandingGuest} />
           <PrivateRoute exact path="/home" component={LandingLogin} />
           <PrivateRoute exact path="/detail/:id" component={Detail} />
           <PrivateRoute exact path="/cart" component={Cart} />

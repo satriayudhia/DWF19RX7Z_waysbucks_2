@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react'
 import {AppContext} from '../../config/Context'
-import axios from 'axios'
+import Axios from 'axios'
+import {Formik, Form} from 'formik'
+import * as Yup from 'yup'
+import FormikControl from '../../components/atoms/FormikControl'
 import {useHistory} from 'react-router-dom'
 import {Modal} from 'react-bootstrap'
 import Content from '../../components/molecules/Content'
@@ -13,75 +16,90 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from '../../components/atoms/Button'
-import User from '../../API/User'
 
 const LandingGuest = () => {
     //Context
-    const [state, dispatch] = useContext(AppContext);
+    const [dispatch] = useContext(AppContext);
     //Modal
     const [loginShow, setLoginShow] = useState(false)
     const [registerShow, setRegisterShow] = useState(false)
-    //OnChange input login
-    const [emailLogin, setEmailLogin] = useState("")
-    const [passwordLogin, setPasswordLogin] = useState("")
-    //OnChange input register
-    const [emailRegister, setEmailRegister] = useState("")
-    const [passwordRegister, setPasswordRegister] = useState("")
-    const [fullnameRegister, setFullnameRegister] = useState("")
 
-    const router = useHistory();
+    const initialValuesLogin = {
+        email: '',
+        password: ''
+    }
 
-    const handleSubmitLogin = e => {
-        e.preventDefault()
+    const initialValuesRegister = {
+        email: '',
+        password: '',
+        fullname: ''
+    }
 
-        axios.get('http://localhost:3000/users')
-            .then(function (response) {
-                const findUser = response.data.find((email) => email.email === emailLogin)
-                console.log("hasil findUser", findUser)
-                if(findUser == undefined) {
-                    alert("Email atau Password yang anda masukkan salah")
-                } else if (emailLogin === findUser.email && passwordLogin === findUser.password && findUser.isAdmin == false) {
+    const router = useHistory()
+
+    const validationSchemaLogin = Yup.object({
+        email: Yup.string().email('Invalid email format').required('required'),
+        password: Yup.string().required('Required')
+    })
+
+    const validationSchemaRegister = Yup.object({
+        email: Yup.string().email('Invalid email format').required('required'),
+        password: Yup.string().min(8, 'Minimum password is 8 characters').required('Required'),
+        fullname: Yup.string().min(3, 'Minimum fullname is 3 characters').required('Required')
+    })
+
+    const handleSubmitLogin = (values) => {
+        console.log('Form data', values)
+
+        const promise = new Promise((resolve, reject) => {
+            Axios.post('http://localhost:3001/api/v1/login', 
+            {email: values.email, password: values.password})
+            .then((result) => {
+                resolve(result)
+                if (result.data.status === 'success' && result.data.data.isAdmin == 0) {
                     dispatch({
-                        type: "LOGIN",
-                        uid: findUser.id
+                        type: 'LOGIN',
+                        uid: result.data.data.id
                     })
                     router.push('/home')
-                } else if (emailLogin === findUser.email && passwordLogin === findUser.password && findUser.isAdmin == true) {
+                }
+                else if (result.data.status === 'success' && result.data.data.isAdmin == 1) {
                     dispatch({
-                        type: "LOGIN"
+                        type: 'LOGIN',
+                        uid: result.data.data.id
                     })
                     router.push('/admin')
                 }
+                console.log("result", result)
+            }, (err) => {
+                reject(err)
+                alert("Email atau Password yang anda masukkan")
             })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
         })
-        // const findUser = User.find((email) => email.email === emailLogin)
+        return promise
     }
 
-    const handleSubmitRegister = e => {
-        e.preventDefault()
-
-        let timestamp = new Date().getTime()
-        axios.post('http://localhost:3000/users', {
-                id: timestamp,
-                name: fullnameRegister,
-                email: emailRegister,
-                password: passwordRegister,
+    const handleSubmitRegister = (values) => {
+        // console.log('Form data', values)
+        const promise = new Promise((resolve, reject) => {
+            Axios.post('http://localhost:3001/api/v1/register', {
+                fullname: values.fullname,
+                email: values.email,
+                password: values.password,
                 profpic: 'https://res.cloudinary.com/satria-img/image/upload/v1606646227/satriayud/197-1979569_no-profile_yn9cy0.png',
+                status: 'active',
                 isAdmin: false
-        }, (err) => {
-            console.log('error', err)
-            }   
-        )
-        .then(
-            setEmailRegister(""),
-            setPasswordRegister(""),
-            setFullnameRegister(""),
-            alert("Akun berhasil dibuat"),
-            toLoginShow()
-        )
+            })
+            .then((result) => {
+                resolve(result)
+                alert("Akun berhasil dibuat")
+                toLoginShow()
+            }, (err) => {
+                reject(err)
+                alert("Email already registered")
+            })
+        })
+        return promise
     }
 
     const toLoginShow = () => {
@@ -118,6 +136,34 @@ const LandingGuest = () => {
                     dialogClassName="modal-login">
                     <Modal.Body>
                     <div className="login-wrapper">
+                        <Formik initialValues={initialValuesLogin} validationSchema={validationSchemaLogin} onSubmit={(e) => handleSubmitLogin(e)}>
+                            {
+                                formik => {
+                                    return <Form>
+                                        <p className="title-login">Login</p>
+                                        <FormikControl
+                                        className="form-input"
+                                        placeholder="Email"
+                                        control='input'
+                                        type='email'
+                                        name='email'/>
+                                        <Gap height={20} />
+                                        <FormikControl
+                                        className="form-input"
+                                        placeholder="Password"
+                                        control='input'
+                                        type='password'
+                                        name='password'/>
+                                        <Gap height={29} />
+                                        <Button title="Login" type="submit" disabled={!formik.isValid} />
+                                        <p className="to-register">Don't have an account ? Click <strong className="cursor-pointer" onClick={toRegisterShow}>Here</strong></p>
+                                    </Form>
+                                }
+                            }
+                        </Formik>
+                    </div>
+                    
+                    {/* <div className="login-wrapper">
                         <form>
                             <p className="title-login">Login</p>
                             <input className="form-input" value={emailLogin} onChange={e => setEmailLogin(e.target.value)} type="text" placeholder="Email" />
@@ -127,7 +173,7 @@ const LandingGuest = () => {
                             <Button title="Login" onClick={(e) => handleSubmitLogin(e)} />
                             <p className="to-register">Don't have an account ? Click <strong className="cursor-pointer" onClick={toRegisterShow}>Here</strong></p>
                         </form>
-                    </div>
+                    </div> */}
                     </Modal.Body>
                 </Modal>
                 <Modal
@@ -137,7 +183,41 @@ const LandingGuest = () => {
                     centered
                     dialogClassName="modal-register">
                     <Modal.Body>
-                    <div className="register-wrapper">
+                        <div className="register-wrapper">
+                            <Formik initialValues={initialValuesRegister} validationSchema={validationSchemaRegister} onSubmit={(e) => handleSubmitRegister(e)}>
+                                {
+                                    formik => {
+                                        return <Form>
+                                            <p className="title-register">Register</p>
+                                            <FormikControl
+                                            className="form-input"
+                                            placeholder="Email"
+                                            control='input'
+                                            type='email'
+                                            name='email'/>
+                                            <Gap height={20} />
+                                            <FormikControl
+                                            className="form-input"
+                                            placeholder="Password"
+                                            control='input'
+                                            type='password'
+                                            name='password'/>
+                                            <Gap height={20} />
+                                            <FormikControl
+                                            className="form-input"
+                                            placeholder="Fullname"
+                                            control='input'
+                                            type='text'
+                                            name='fullname'/>
+                                            <Gap height={29} />
+                                            <Button title="Register" type="submit" disabled={!formik.isValid} />
+                                            <p className="to-login">Already have an account ? Click <strong className="cursor-pointer" onClick={toLoginShow}>Here</strong></p>
+                                        </Form>
+                                    }
+                                }
+                            </Formik>
+                        </div>
+                    {/* <div className="register-wrapper">
                         <form>
                             <p className="title-register">Register</p>
                             <input className="form-input" value={emailRegister} onChange={e => setEmailRegister(e.target.value)} type="text" placeholder="Email" />
@@ -149,7 +229,7 @@ const LandingGuest = () => {
                             <Button title="Register" onClick={(e) => handleSubmitRegister(e)} />
                             <p className="to-login">Already have an account ? Click <strong className="cursor-pointer" onClick={toLoginShow}>Here</strong></p>
                         </form>
-                    </div>
+                    </div> */}
                     </Modal.Body>
                 </Modal>
         </Container>
